@@ -3,7 +3,7 @@
   "version": "2.1.2",
   "description": "A utility-first CSS framework for rapidly building custom user interfaces.",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "./lib/index.js",
   "style": "dist/tailwind.css",
   "repository": "https://github.com/tailwindlabs/tailwindcss.git",
   "bugs": "https://github.com/tailwindlabs/tailwindcss/issues",
@@ -110,7 +110,8 @@
     "testTimeout": 30000,
     "setupFilesAfterEnv": [
       "<rootDir>/jest/customMatchers.js"
-    ]
+    ],
+    "testPathIgnorePatterns": ["/node_modules/", "/integrations/"]
   },
   "engines": {
     "node": ">=12.13.0"
