@@ -27,8 +27,8 @@ module.exports = function $(command, options = {}) {
       stderr += data
     })
 
-    child.on('close', (code) => {
-      ;(code === 0 ? resolve : reject)({ code, stdout, stderr })
+    child.on('close', (code, signal) => {
+      ;(signal === 'SIGTERM' ? resolve : code === 0 ? resolve : reject)({ code, stdout, stderr })
     })
   })
 }
